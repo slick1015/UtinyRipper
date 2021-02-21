@@ -40,49 +40,8 @@ namespace uTinyRipper.Converters.Sprites
 			public void GenerateOutline()
 			{
 				List<int> outline = new List<int>();
-				Outside outsider = m_outsiders[0];
-				Vector3i tri = m_triangles[outsider.Triangle];
-				int first = tri.GetValueByMember(outsider.Member);
-				int second = tri.GetValueByMember(outsider.Member + 1);
-				int startTriIndex = outsider.Triangle;
-				outline.Add(first);
-				outline.Add(second);
-
-				Vector3i lastTri = tri;
-				int lastMember = outsider.Member + 1;
-				int lastVertex = lastTri.GetValueByMember(outsider.Member);
-				int lastTriIndex = outsider.Triangle;
-				while (true)
-				{
-					if (GetNextOutsider(lastTri, lastMember, out outsider))
-					{
-						lastTri = m_triangles[outsider.Triangle];
-						lastMember = outsider.Member + 1;
-						lastVertex = lastTri.GetValueByMember(outsider.Member);
-						lastTriIndex = outsider.Triangle;
-					}
-					else
-					{
-						lastMember++;
-						if (lastTri.GetValueByMember(lastMember) == lastVertex)
-						{
-							if (lastVertex != first)
-							{
-								break;
-							}
-						}
-					}
-
-					int nextVertex = lastTri.GetValueByMember(lastMember);
-					if (nextVertex == first)
-					{
-						break;
-					}
-
-					outline.Add(nextVertex);
-				}
-
 				GeneratedOutline = outline;
+				return;
 			}
 
 			public bool IsContain(int triIndex)

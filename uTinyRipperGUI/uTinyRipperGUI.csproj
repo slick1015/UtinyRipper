@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{ADEE41C3-2951-4CD7-99B8-6F542D4DB28D}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <OutputType>WinExe</OutputType>
     <RootNamespace>uTinyRipperGUI</RootNamespace>
     <AssemblyName>uTinyRipper</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -137,6 +137,7 @@
     <Compile Include="Exporters\Audio\AudioConverter.cs" />
     <Compile Include="Exporters\Shader\DirectX\DXDataHeader.cs" />
     <Compile Include="Exporters\Shader\DirectX\DXInputPrimitive.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="ThirdParty\DXShaderRestorer\ConstantBufferChunk.cs" />
     <Compile Include="ThirdParty\DXShaderRestorer\ConstantBufferFlags.cs" />
     <Compile Include="ThirdParty\DXShaderRestorer\ConstantBufferType.cs" />

@@ -68,7 +68,7 @@ namespace uTinyRipper
 #if VIRTUAL
 			return new MemoryStream();
 #else
-			return Open(path, FileMode.CreateNew, FileAccess.Write);
+			return Open(path, FileMode.OpenOrCreate, FileAccess.Write);
 #endif
 		}
 
